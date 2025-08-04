@@ -20,7 +20,35 @@ def is_palindromic_col(board, r, c, length):
         top += 1
         bottom -= 1
     return True
- 
+
+def is_palindromic_dudu(board, fix, start, length, direction):
+    left = 0
+    right = length - 1
+    
+    while left < right:
+        if direction == 0: # 가로
+            if board[fix][start + left] != board[fix][start +right]:
+                return False
+        else: # 세로
+            if board[start + left][fix] != board[start + right][fix]:
+                return False
+        left += 1
+        right -= 1
+    
+    return True
+
+def solution():
+    # _ = input()
+    N = 100
+    board = [list(input()) for _ in range(N)]
+        for i in range(N):
+            for start in range(N - length + 1):
+                if is_palindromic_dudu(board, i, start, length, 0):
+                    return length
+                if is_palindromic_dudu(board, i, start, length, 1):
+                    return length
+    return 1
+
 def solution():
     # _ = input()
     N = 100

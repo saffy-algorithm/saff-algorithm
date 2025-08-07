@@ -1,0 +1,32 @@
+for tc in range(10):
+    input()
+    
+    matrix = [list(map(int,input().split())) for _ in range(100)]
+    
+    for ind in range(100):
+        if matrix[99][ind]== 2:
+            y = ind
+
+    x = 99
+        
+    while x > 0:
+        if y - 1 >= 0 and matrix[x][y - 1] == 1:
+            y -= 1
+            # print(f'{x},{y}')
+            matrix[x][y] = False
+
+        elif y + 1 >= 0 and y+1 <=99  and matrix[x][y + 1] == 1:
+            y += 1
+            # print(f'{x},{y}')
+            matrix[x][y] = False
+            
+
+        elif x - 1 >= 0 and matrix[x - 1][y] == 1:
+            x -= 1
+            # print(f'{x},{y}')
+            matrix[x][y] = False
+
+        else:
+            break
+
+    print(f'#{tc} {y}')

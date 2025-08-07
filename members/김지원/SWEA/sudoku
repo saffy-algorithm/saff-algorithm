@@ -1,0 +1,39 @@
+N= int(input())
+ 
+for tc in range(N):
+ 
+    matrix = []
+    box = []
+    result_list = []
+ 
+    for i in range(9):
+        row = list(map(int,input().split()))
+        matrix.append(row)
+ 
+ 
+    for k in range(9):
+        col = []
+        col_list = []
+        for l in range(9):
+            col.append(matrix[l][k])
+         
+        matrix.append(col)
+         
+ 
+ 
+    for k in range(0,9,3):
+        for h in range(0,9,3):
+            box = []
+            for i in range(0,3):
+                for j in range(0,3):
+                    box.append(matrix[i+k][j+h])
+ 
+            matrix.append(box)
+ 
+    for num in range(27):
+        if set(matrix[num]) != set([1,2,3,4,5,6,7,8,9]):
+            print(f"#{tc+1} 0")
+            break
+ 
+    else:
+        print(f'#{tc+1} 1')

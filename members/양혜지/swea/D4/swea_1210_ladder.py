@@ -1,0 +1,45 @@
+# 순서대로 위 왼 오 세팅
+# 0 : 상, 1 : 좌, 2 : 우     
+dr = [-1, 0, 0]
+dc = [0, -1, 1]
+
+# 0 : [1, 2, 0]
+# 1 : [0, 1]
+# 2 : [0, 2]
+search_dir = [[1, 2, 0], [0, 1], [0, 2]]
+
+T = 10
+for tc in range(1, T+1):
+    input()
+    ladder = [list(map(int,input().split())) for _ in range (100)] # 리스트 몇바이몇인지
+
+# 출구부터 거꾸로 올라갈거임
+    r = 99
+    c = ladder[99].index(2) # 2의 위치 찾는 건 index 함수 써줌
+    
+# 이동을 위해서는 방향을 정해줘야 함
+    dir = 0 # 초기값 0
+    
+# 이동을 반복해서 수행 -> 이동 횟수 알 수 없음 -> 알 수 없으면 while
+# 언제까지 while 을 도냐 -> 입구까지 가면 중단
+# 입구라는 건 어떻게 ? -> r=0이면 
+# r이 0이 되기 전까지 돌아야 함
+
+# 이제 출발 ㄱ
+    while r > 0:
+# 우선순위에 따라서 탐색 -> 현재 바라보는 방향에 따라서 달라짐
+        # 다음 방향 탐색
+        for i in range(len(search_dir[dir])): # 인덱스로 현재방향을 넣어줌
+            # 다음 방향 후보
+            next_dir = search_dir[dir][i]
+            next_r = r+dr[next_dir]
+            next_c = c+dc[next_dir]
+            
+            # 확정지을 수 없음
+            if 0 <= next_c < 100 and ladder[next_r][next_c] == 1:
+                dir = next_dir # 다음후보 확정시켜줌
+                r = next_r
+                c = next_c
+                break
+            
+    print(f'#{tc} {c}')

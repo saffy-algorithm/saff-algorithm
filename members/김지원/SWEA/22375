@@ -1,0 +1,16 @@
+T= int(input())
+for tc in range(T):
+    N = int(input())
+
+    arr = list(map(int,input().split()))
+    arr_result = list(map(int,input().split()))
+
+    count = 0
+    for i in range(len(arr)):
+        if arr[i] != arr_result[i]:
+            count += 1
+            for j in range(i,N):
+                arr[j] = 1 - arr[j]
+
+    
+    print(f'#{tc+1} {count}')

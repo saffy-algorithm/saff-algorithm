@@ -1,3 +1,4 @@
+
 T =int(input())
 
 for tc in range(T):
@@ -13,25 +14,22 @@ for tc in range(T):
         for j in range(M):
             if matrix[i][j] == 1:
                 count += 1
-                if j == N-1:
-                    if max_count < count:
-                        max_count = count
-
             
             if matrix[i][j] == 0:
                 if max_count < count:
                     max_count = count
                 count = 0
 
-    for j in range(N):
+        max_count = max(max_count,count)
+
+
+
+    for j in range(M):
         col_count = 0
-        for i in range(M):
+        for i in range(N):
             if matrix[i][j] == 1:
                 col_count += 1
-                if i == M-1:
-                    if max_count < col_count:
-                        max_count = col_count
-
+        
             
             if matrix[i][j] == 0:
                 if max_count < col_count:
@@ -39,4 +37,10 @@ for tc in range(T):
                 col_count = 0
 
 
-    print(f'#{tc+1} {max_count}')
+        max_count = max(max_count,col_count)
+
+    if max_count <= 1:
+        print(f'#{tc+1} 0')
+
+    else:
+        print(f'#{tc+1} {max_count}')

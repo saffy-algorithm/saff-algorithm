@@ -1,0 +1,26 @@
+T= int(input())
+for tc in range(T):
+    N = int(input())
+
+    matrix = [list(map(int,input().split())) for _ in range(N)]
+
+    max_sum = 0
+
+    for i in range(N):
+        for j in range(N):
+            row_sum = 0
+            col_sum = 0
+            for k in range(-N,N):
+                if 0<=i+k<N:
+                    row_sum += matrix[i+k][j]
+                if 0<=j+k<N:
+                    col_sum += matrix[i][j+k]
+
+            total_sum = row_sum + col_sum - matrix[i][j]
+
+            if max_sum < total_sum:
+                max_sum = total_sum
+                
+    print(f'#{tc+1} {max_sum}')
+
+        

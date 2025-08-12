@@ -17,3 +17,4 @@ for tc in range(1, T+1):
                 arr[l] = arr[r] = arr[r] ^ 1  # 둘 다 뒤집기
     
     print(f'#{tc}', *arr)  # *: 리스트 언패킹
+

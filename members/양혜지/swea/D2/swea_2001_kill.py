@@ -4,7 +4,7 @@
 # arr = list(map(int,input().split()))
 # max_val = 0
 # for i in range(N-M+1):
-#     # 시작점이 달라질 때마다 다른 부분을 봄
+#     # 시작점이 달라질 때마다 다른 부분을 돔
 #     # 변수 초기화
 #     sum_arr = 0
 #     for p in range(i, i+M):
@@ -14,7 +14,7 @@
     
 # print(max_val)
 
-###################################
+##################################
 
 T = int(input())
 
@@ -22,7 +22,7 @@ for tc in range(1, T+1):
     N, M = map(int,input().split())
 
     # 2차원 리스트
-    arr = [list(map(int,input().split())) for _ in range (N)]
+    arr = [list(map(int,input().split())) for _ in range(N)]
     max_val = 0
     for i in range(N-M+1):
         for j in range(N-M+1):

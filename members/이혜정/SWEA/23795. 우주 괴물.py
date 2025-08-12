@@ -31,4 +31,4 @@ for tc in range(1, T+1):
             if arr[r][c] == 1:
                 one_cnt += 1
 
-    print(f'#{tc} {N*N - unsafe_cnt - one_cnt - 1}')    # 전체 개수 - 안전하지 않은 구역 개수 - 벽 개수 - 우주괴물
+    print(f'#{tc} {N * N - unsafe_cnt - one_cnt - 1}')    # 전체 개수 - 안전하지 않은 구역 개수 - 벽 개수 - 우주괴물

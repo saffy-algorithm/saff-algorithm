@@ -12,12 +12,12 @@ for tc in range(T):
             if matrix[i][j] == 2:
                 x_cor = i
                 y_cor = j
-                break
+                break #2가 있는 곳 찾기
 
     dx = [1,0,-1,0]
     dy = [0,1,0,-1]
 
-    for n in range(4):
+    for n in range(4): 
         for m in range(1,N):
             x_move = x_cor + m*dx[n]
             y_move = y_cor + m*dy[n]
@@ -26,7 +26,7 @@ for tc in range(T):
                     matrix[x_move][y_move] = 1
 
                 else:
-                    break
+                    break #한 방향으로 가다가 1을 만나면 멈추기. 그리고 방향 바꾸기 
 
     count = 0
     for p in range(N):

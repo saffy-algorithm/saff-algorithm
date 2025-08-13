@@ -18,3 +18,23 @@ for tc in range(1, T+1):
     
     print(f'#{tc}', *arr)  # *: 리스트 언패킹
 
+
+###############################
+
+# def swap(num):
+#     return 1 - num
+# T = int(input())
+# for tc in range(1, T + 1):
+#     N, M = map(int, input().split())
+#     arr = list(map(int, input().split()))
+#     for _ in range(M):
+#         i, j = map(int, input().split())
+#         for k in range(1, j + 1):
+#             if i + k - 1 > N - 1 or i - k - 1 < 0:
+#                 break
+#             if arr[i + k - 1] == arr[i - k - 1]:
+#                 arr[i + k - 1] = swap(arr[i + k - 1])
+#                 arr[i - k - 1] = swap(arr[i - k - 1])
+#     print(f'#{tc}', end=' ')
+#     print(*arr)
+

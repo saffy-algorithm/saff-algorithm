@@ -1,12 +1,8 @@
 switch_num = int(input())
-
 switch = list(map(int,input().split()))
 
 num =  int(input())
-
 change = [list(map(int,input().split())) for _ in range(num)]
-
-flag = False
 
 for i in range(num):
     if change[i][0] == 1:
@@ -24,9 +20,7 @@ for i in range(num):
                     switch[m-p] = 1 - switch[m-p]
 
                 else:
-                    flag = True
                     break
-
 
 count = 0
 for num in switch:
@@ -34,6 +28,8 @@ for num in switch:
     count += 1
     if count % 20 == 0:
         print()
+
+
 
 
 #최두용 코드

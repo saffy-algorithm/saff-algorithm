@@ -12,8 +12,8 @@ for tc in range(1, T + 1):
                 idx_i = i
                 idx_j = j
  
-    dx = [1, 0, -1, 0]
-    dy = [0, 1, 0, -1]
+    dx = [-1, 1, 0, 0]
+    dy = [0, 0, 1, -1]
  
     for d in range(4):
         for step in range(1, N):

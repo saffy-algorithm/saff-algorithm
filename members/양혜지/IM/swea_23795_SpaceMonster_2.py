@@ -11,18 +11,18 @@ for tc in range(1, T+1):
     
     for i in range(N):
         for j in range(N):
-            if arr[i][j] == 2:
+            if arr[i][j] == 2: # 시작점
                 for m in range(4):
                     k = 1 # 거리
-                    while:
+                    while True:
                         ni = i+dr[m]*k
                         nj = j+dc[m]*k
-                        if ni >= 0 and 
+                        if ni >= 0 and nj >= 0:
                             arr[ni][nj] = 1
                         else:
                             break
                         
-                
+    print(f'{tc} {count}')
     
     
     # 2를 찾아 ..?  괴물 위치가 시작점

@@ -9,7 +9,6 @@ for tc in range(1, T+1):
     
     # i = 현재 초
     switch = "Possible"
-    
 
     for i in range(people[-1]+1): 
         # M초마다 K개만큼 붕어빵 개수를 추가한다

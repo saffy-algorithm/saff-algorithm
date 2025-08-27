@@ -19,7 +19,6 @@ for i in range(N):
 
 # 시작일을 -1로 돌아야 함
 # 1. 토마톡 다 익어있는 경우에 while 한 바퀴 돌고 0을 출력해야 함
-# 2. 정답이 8이 나와야 하는데, 마지막 익은 토마토가 append 돼서 while문을 한 바퀴 더 돌게 됨
 days = -1
 
 while tomato_idx:
@@ -36,7 +35,6 @@ while tomato_idx:
                 
     days += 1
 
-# 토마토가 다 익을 수 없는 경우에는 days 가 -1로 나와야 함
 find = False
 for i in range(N):
     for j in range(M):

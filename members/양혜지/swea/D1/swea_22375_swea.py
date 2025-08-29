@@ -20,5 +20,3 @@ for tc in range(1, T+1):
                 Ai[j] = 1-Ai[j]
                      
     print(f'#{tc} {cnt}')
-            
-            

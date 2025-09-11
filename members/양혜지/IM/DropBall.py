@@ -43,4 +43,4 @@ for test_case in range(1, T+1):
                 pre_r, pre_c = min_r, min_c
                 count += 1
                 
-    print(max_count)
+    print(max_count)    

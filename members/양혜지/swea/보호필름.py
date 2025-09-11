@@ -1,3 +1,22 @@
+def test_films(films):
+    for c in range(W):
+        count = 0
+        before = -1
+        test_pass = False
+        for r in range(D):
+            if films[r][c] == before:
+                count += 1
+            else:
+                count = 1
+                before = films[r][c]
+             
+            if count >= K:
+                test_pass = True
+                break
+        if not test_pass:
+            return False
+    return True
+
 def dfs(films, count, idx):
     global answer
 
@@ -9,7 +28,7 @@ def dfs(films, count, idx):
     if answer <= count:
         return
     
-    if count == K-1:
+    if count == K-1:       
         return
     
     next_films = films[:]
@@ -17,16 +36,17 @@ def dfs(films, count, idx):
         next_films[i] = A
         dfs(next_films, count+1, i+1)
         next_films[i] = B
-        dfs(next_films, count+1, i+1) 
+        dfs(next_films, count+1, i+1)
         # 다음 행 넘어가기 전에 의사 결정한 거 원복시켜
         next_films[i] = films[i]
+
 
 
 T = int(input())
 
 # 소괄호에 쉼표 써야 튜플 인식
 A = (0,) * 20
-B = (0,) * 20
+B = (1,) * 20
 
 # 참조점만 바꾸는 건 얕은복사
 
@@ -41,4 +61,5 @@ for tc in range(1, T+1):
     # 부분집합으로 접근할거라서 dfs 채택
     # 부분집합은 두가지 방법 1. 넣을지 말지 2. 조합으로 짜도된다
 
-    dfs(films, 0, idx)
+    dfs(films, 0, 0)
+    print(f'#{tc} {answer}')

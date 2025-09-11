@@ -4,15 +4,14 @@
 # 뭐 하나를 고르면 고른 것보다 큰 걸 다음걸로 고름
 # 이 특징 때문에 얘는 방문 체크할 필요가 없음
 # 탐색 범위 자체가 고른 녀석은 건너뛰고 체크하니깐
-
-numbers = [1, 2, 3, 4, 5]
+N = 2
+numbers = [1, 2, 3, 4]
 picked_numbers = []
-M = 3
 
 # 고른 수 뿐만 아니라, 몇번 째까지 골랐는 지를 인자로 넘겨줘야됨
 # 고른 거 이후부터 새로골라! 라고 해야하니깐
 def comb(count, idx):
-    if count == M:
+    if count == N:
         print(picked_numbers)
         return
     
@@ -21,7 +20,7 @@ def comb(count, idx):
         picked_numbers.append(numbers[i])
         # 다음 호출을 할 때 전달해줘야돼 다음 범위를
         # idx : 지금 당장 탐색하고자하는 범위의 시작점
-        # 내가 전달 할 건 고른 녀석을 넘겨줘야지요
+        # 내가 전달 할 건 고른 녀석을 넘겨줘야지요s
         comb(count+1, i+1)
         picked_numbers.pop()
 

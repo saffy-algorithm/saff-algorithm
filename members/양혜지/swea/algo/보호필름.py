@@ -2,7 +2,7 @@ def test_films(films):
     for c in range(W):
         count = 0
         before = -1
-        test_pass = False
+        test_pass = Falsee
         for r in range(D):
             if films[r][c] == before:
                 count += 1

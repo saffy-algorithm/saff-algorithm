@@ -7,7 +7,7 @@ for tc in range(T):
     answer = 0 # 충전 횟수
 
     while position + K < N:
-        for i in range(posotion+K, position, -1):
+        for i in range(position+K, position, -1):
             if i in charge:
                 position = i
                 answer += 1
